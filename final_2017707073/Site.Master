@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="final_2017707073.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="tr">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %>2017707073 final sinavi</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style>
+
+        .container {
+  display: flex;
+}
+
+form {
+  flex: 1;
+}
+
+.vertical-menu {
+  width:200px;
+   flex-shrink: 0;
+  box-sizing: border-box;
+    background-color: #eee;
+    position:fixed;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+  left:0;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+</style>
+
+</head>
+<body>
+    <header>
+         <h1><center>ALTIN ELMA LİMİTED ŞİRKETİ</center></h1>
+    <h2><center>Elmanın Güzeli Çiftliğin Şahanesi</center></h2>
+
+    </header>
+        <div  class="container">
+        
+<div class="vertical-menu" width="100">
+    <a>Altın Elma Gezinti</a>
+  <a runat="server" href="~/Default">Satıcı Gir</a>
+  <a runat="server" href="~/Default2">Satış Gir</a>
+  <a runat="server" href="~/Default3">Satış Raporu</a>
+    <a runat="server" href="~/iletisim">İletişim</a>
+</div>
+
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+
+        </div>
+            </form>
+        </div>
+            <footer>
+                <p><center>&copy; - Altın Elma Limited - <%: DateTime.Now.Year %></center></p>
+                <p><center>Çiftliğimizde bütün elma çeşitlerine ek olarak küçük/büyükbaş hayvan bulunmakta</center></p>
+<p><center>ve nefis mi nefis yumurtalar satılmaktadır.</center></p>
+            </footer>
+</body>
+</html>
